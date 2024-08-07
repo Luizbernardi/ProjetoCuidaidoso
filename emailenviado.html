@@ -28,36 +28,36 @@
             }
         }
     </script>
-    <title>Esqueci a Senha</title>
+    <title>Email enviado</title>
 </head>
 
 <body>
     <main class="flex h-screen lg:flex-row flex-col">
         <div class="lg:w-[50%] hidden lg:block">
-            <img class="w-full h-full" src="./public/img/recuperação.png" alt="imagem recuperação">
+            <img src="./public/img/recuperação.png" alt="email enviado">
         </div>
         <div class="lg:w-[50%] flex justify-center items-center h-full mx-4">
             <form class="flex-col flex" method="post">
                 <img src="./public/img/Logo.png" alt="Logo Cuidaidoso">
-                <p class="text-lg font-bold my-2">Esqueceu sua senha?<br>Vamos recuperar!</p>
-                <p class="text-sm my-2">Por favor, digite seu email para receber um link para redefinir sua senha.</p>
-                <span class=" my-2 flex items-center gap-5 bg-redbackground border-red-600 border rounded-md p-2">
+                <p class="text-lg font-bold my-2">Email enviado!</p>
+                <p class="text-sm my-2">Enviamos um email para você com as instruções para redefinir sua senha.</p>
+                <div class="my-2 flex items-center gap-5 bg-green-300 border-green-500 border rounded-md p-2">
                     <div>
-                        <svg class="text-red-400" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                        <svg class="text-green-500" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em"
                             viewBox="0 0 24 24">
                             <path fill="currentColor" fill-rule="evenodd"
-                                d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10m-.75-12v7h1.5v-7zM12 9a1 1 0 1 0 0-2a1 1 0 0 0 0 2" />
+                                d="M15.418 5.643a1.25 1.25 0 0 0-1.34-.555l-1.798.413a1.25 1.25 0 0 1-.56 0l-1.798-.413a1.25 1.25 0 0 0-1.34.555l-.98 1.564c-.1.16-.235.295-.395.396l-1.564.98a1.25 1.25 0 0 0-.555 1.338l.413 1.8a1.25 1.25 0 0 1 0 .559l-.413 1.799a1.25 1.25 0 0 0 .555 1.339l1.564.98c.16.1.295.235.396.395l.98 1.564c.282.451.82.674 1.339.555l1.798-.413a1.25 1.25 0 0 1 .56 0l1.799.413a1.25 1.25 0 0 0 1.339-.555l.98-1.564c.1-.16.235-.295.395-.395l1.565-.98a1.25 1.25 0 0 0 .554-1.34L18.5 12.28a1.25 1.25 0 0 1 0-.56l.413-1.799a1.25 1.25 0 0 0-.554-1.339l-1.565-.98a1.25 1.25 0 0 1-.395-.395zm-.503 4.127a.5.5 0 0 0-.86-.509l-2.615 4.426l-1.579-1.512a.5.5 0 1 0-.691.722l2.034 1.949a.5.5 0 0 0 .776-.107z"
+                                clip-rule="evenodd" />
                         </svg>
                     </div>
                     <div>
                         <strong>
-                            <p class="text-orangetext text-xs my-2 ">
-                                O email informado não está cadastrado em nossa base de dados.<br> Por favor, verifique
-                                se o email está correto.
+                            <p class="text-green-800 text-sm">
+                                Email de recuperação enviado com sucesso!
                             </p>
                         </strong>
                     </div>
-                </span>
+                </div>
                 <input class="my-2 py-2 px-2 mb-2 border rounded-md" placeholder="Email" type="email" id="email"
                     name="email" required>
                 <div class=" my-2 lg:justify-start flex justify-center gap-4">
