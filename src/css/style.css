@@ -4,10 +4,15 @@ body {
     margin: 0;
     padding: 0;
 }
-.custom-label { /* Ajuste a altura conforme necessário */
+
+.custom-label {
+    height: 40;
+    /* Ajuste a altura conforme necessário */
     display: flex;
     align-items: center;
 }
+
 .custom-select {
-    height: 100%; /* Para garantir que o select preencha a altura do label */
+    height: 2.5rem;
+    /* Para garantir que o select preencha a altura do label */
 }

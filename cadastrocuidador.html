@@ -35,19 +35,19 @@
 <body>
     <main class=" h-screen flex items-center justify-center">
         <div class="left-10 absolute top-10">
-            <img class="flex align-top w-25" src="/public/img/Logo2.png" alt="Logo Cuidaidoso">
+            <img class="flex align-top h-40" src="/public/img/Logo2.png" alt="Logo Cuidaidoso">
         </div>
-        <div class="bg-white max-w-[600px] shadow-md mx-auto p-10">
+        <div class="bg-white max-w-[2000px] shadow-md mx-auto p-20">
             <div class="flex justify-center">
-                <img class="w-40" src="public/img/logocadastro.png" alt="Logo cadastro">
+                <img class="w-60" src="public/img/logocadastro.png" alt="Logo cadastro">
             </div>
             <form class="grid grid-cols-2 ">
                 <div class="space-y-2">
                     <p class="gap-2">Novo cadastro</p>
-                    <label class="input input-bordered flex items-center gap-2 h-8 ">
+                    <label class="input input-bordered flex items-center gap-2 custom-label">
                         <input placeholder="Nome" type="text" class="grow" required />
                     </label>
-                    <label class="input input-bordered flex items-center gap-2 h-8">
+                    <label class="input input-bordered flex items-center gap-2 custom-label">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
                             class="h-4 w-4 ">
                             <path
@@ -65,15 +65,15 @@
                             <option value="prefiro-nao-dizer">Prefiro não dizer</option>
                         </select>
                     </label>
-                    <label class="input input-bordered flex items-center gap-2 h-8">
+                    <label class="input input-bordered flex items-center gap-2 custom-label">
 
                         <input placeholder="Cpf" type="text" id="cpf" name="cpf" maxlength="14"
                             oninput="formatCPF(this)" required>
                     </label>
-                    <label class="input input-bordered flex items-center gap-2 h-8 ">
+                    <label class="input input-bordered flex items-center gap-2 custom-label ">
                         <input type="date" id="DataNascimento" name="DataNascimento" required>
                     </LAbel>
-                    <label class="input input-bordered flex items-center gap-2 h-8">
+                    <label class="input input-bordered flex items-center gap-2 custom-label">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
                             class="h-4 w-4 ">
                             <path
@@ -83,30 +83,30 @@
                         </svg>
                         <input type="text" class="grow" placeholder="Email" required />
                     </label>
-                    <label class="input input-bordered flex items-center gap-2 h-8">
+                    <label class="input input-bordered flex items-center gap-2 custom-label">
                         <input type="text" class="grow" placeholder="Formação" required />
                     </label>
 
 
                 </div>
                 <div class="space-y-2 space-x-2 mt-8">
-                    <label class="mx-2 input input-bordered flex items-center gap-2 h-8">
+                    <label class="mx-2 mr-auto input input-bordered flex items-center gap-2 custom-label">
                         <input type="text" class="grow" placeholder="Biografia" maxlength="150" required />
                     </label>
-                    <label for="cep" class="input input-bordered flex items-center gap-2 h-8">
+                    <label for="cep" class="input input-bordered flex items-center gap-2 custom-label">
                         <input type="text" id="cep" placeholder="Cep" name="cep" maxlength="8" pattern="\d{8}"
                             oninput="formatCep(this)" required>
                     </label>
-                    <label for="cidade" class="input input-bordered flex items-center gap-2 h-8">
+                    <label for="cidade" class="input input-bordered flex items-center gap-2 custom-label">
                         <input type="text" placeholder="Cidade" id="cidade" name="cidade" maxlength="50" required>
                     </label>
-                    <label for="bairro" class="input input-bordered flex items-center gap-2 h-8">
+                    <label for="bairro" class="input input-bordered flex items-center gap-2 custom-label">
                         <input type="text" placeholder="Bairro" id="bairro" name="bairro" maxlength="50" required>
                     </label>
-                    <label for="numero" class="input input-bordered flex items-center gap-2 h-8">
+                    <label for="numero" class="input input-bordered flex items-center gap-2 custom-label">
                         <input type="text" placeholder="Número" id="numero" name="numero" maxlength="10" required>
                     </label>
-                    <label for="complemento" class="input input-bordered flex items-center gap-2 h-8">
+                    <label for="complemento" class="input input-bordered flex items-center gap-2 custom-label">
                         <input type="text" placeholder="Complemento" id="complemento" name="complemento" maxlength="50">
                     </label>
                 </div>
