@@ -34,14 +34,14 @@
 <body>
     <main class="flex h-screen lg:flex-row flex-col">
         <div class="lg:w-[50%] hidden lg:block">
-            <img class="w-full h-full" src="/public/img/recuperação.png" alt="recuperação">
+            <img class="w-full h-full" src="/public/img/old-patient-suffering-from-parkinson.jpg" alt="recuperação">
         </div>
         <div class="lg:w-[50%] flex justify-center items-center h-full mx-4">
             <form class="flex-col flex" action="/" method="post">
                 <img src="/public/img/Logo.png" alt="Logo Cuidaidoso">
-                <p class="my-4 font-bold text-lg">
+                <p class="my-4 font-bold text-4xl">
                     Crie uma nova senha.</p>
-                <p class="my-4 font-normal">
+                <p class="my-4 font-bold text-2xl">
                     Preencha os campos para criar uma nova senha.</p>
                 <span class="flex items-center gap-5 bg-redbackground border border-red-600 rounded-md p-2">
                     <div>
@@ -52,20 +52,20 @@
                     </div>
                     <div>
                         <strong>
-                            <p class="text-orangetext text-xs">
+                            <p class="text-orangetext text-xl">
                                 Os Valores dos campos "Senha" e <br> "Repita a senha" precisam ser indenticos.
                             </p>
                         </strong>
                     </div>
                 </span>
-                <input class="my-4 py-2 px-2 mb-2 border rounded-md" placeholder="Nova senha" type="password"
+                <input class="my-4 py-2 px-2 mb-2 border rounded-md text-xl" placeholder="Nova senha" type="password"
                     id="new-password" name="new-password" required>
-                <input class="py-2 px-2 mb-2 border rounded-md" placeholder="Repita a senha" type="password"
+                <input class="py-2 px-2 mb-2 border rounded-md text-xl" placeholder="Repita a senha" type="password"
                     id="new-password" name="new-password" required>
                 <div class="my-2 lg:justify-start flex justify-center gap-4">
-                    <button class="bg-greenlight px-6 py-2 rounded-md text-white font-bold "
+                    <button class="bg-greenlight px-6 py-2 rounded-md text-black font-bold text-xl "
                         type="submit">Entrar</button>
-                    <a href="/"><button class="bg-redlight px-6 py-2 rounded-md text-white font-bold"
+                    <a href="/"><button class="bg-redlight px-6 py-2 rounded-md text-black font-bold text-xl"
                             type="button">Voltar</button></a>
                 </div>
             </form>
