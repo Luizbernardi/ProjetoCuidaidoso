@@ -39,8 +39,8 @@
         <div class="lg:w-[50%] flex justify-center items-center h-full mx-4">
             <form class="flex-col flex" method="post">
                 <img src="./public/img/Logo.png" alt="Logo Cuidaidoso">
-                <p class="text-lg font-bold my-2">Esqueceu sua senha?<br>Vamos recuperar!</p>
-                <p class="text-sm my-2">Por favor, digite seu email para receber um link para redefinir sua senha.</p>
+                <p class="text-4xl  font-bold my-2">Esqueceu sua senha?<br>Vamos recuperar!</p>
+                <p class="text-3x1 my-2">Por favor, digite seu email para receber um link para redefinir sua senha.</p>
                 <span id="error-message" class=" my-2 flex items-center gap-5 bg-redbackground border-red-600 border rounded-md p-2">
                     <div>
                         <svg class="text-red-400" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
@@ -51,7 +51,7 @@
                     </div>
                     <div>
                         <strong>
-                            <p class="text-orangetext text-xs my-2 ">
+                            <p class="text-orangetext text-3x1 my-2 ">
                                 O email informado não está cadastrado em nossa base de dados.<br> Por favor, verifique
                                 se o email está correto.
                             </p>
@@ -70,18 +70,18 @@
                     </div>
                     <div>
                         <strong>
-                            <p class="text-sm">
+                            <p class="text-3x1">
                                 Email de recuperação enviado com sucesso!
                             </p>
                         </strong>
                     </div>
                 </span>
-                <input class="my-2 py-2 px-2 mb-2 border rounded-md" placeholder="Email" type="email" id="email"
+                <input class="my-2 py-4 px-2 mb-2 border rounded-md" class="text-3x1" placeholder="Email" type="email" id="email"
                     name="email" required>
                 <div class=" my-2 lg:justify-start flex justify-center gap-4">
-                    <button class="bg-greenlight px-6 py-2 rounded-md text-white font-bold "
+                    <button class="bg-greenlight px-6 py-2 rounded-md text-black font-bold "
                         type="submit">Enviar</button>
-                    <a href="/"><button class="bg-redlight px-6 py-2 rounded-md text-white font-bold"
+                    <a href="/"><button class="bg-redlight px-6 py-2 rounded-md text-black font-bold"
                             type="button">Voltar</button></a>
                 </div>
             </form>
