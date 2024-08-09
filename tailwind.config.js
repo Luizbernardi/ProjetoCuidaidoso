@@ -9,7 +9,8 @@ module.exports = {
         graylight: '#E7E7E7',
         graytext: '#D9D9D9',
         redbackground: '#EED0D0',
-        orangetext: '#C25500'
+        orangetext: '#C25500',
+        tela1white: '#ffffff',
       }
     }
   },

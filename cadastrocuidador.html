@@ -1,44 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="src/css/style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-        <link
-            href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-            rel="stylesheet">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        colors: {
-                            redlight: '#E55959',
-                            greenlight: '#7FCDCD',
-                            graylight: '#E7E7E7',
-                            graytext: '#D9D9D9',
-                            redbackground: '#EED0D0',
-                            orangetext: '#C25500'
-                        }
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        redlight: '#E55959',
+                        greenlight: '#7FCDCD',
+                        graylight: '#E7E7E7',
+                        graytext: '#D9D9D9',
+                        redbackground: '#EED0D0',
+                        orangetext: '#C25500'
                     }
                 }
             }
-        </script>
-        <title>Cadastro cuidador</title>
-    </head>
-<body>
-    <main class="flex h-screen lg:flex-row flex-col">
-        <Header>
-            <img class="flex align-top h-50 w-50 mx-8 my-4" src="/public/img/Logo2.png" alt="Logo Cuidaidoso">
-        </Header>
-        <div>
-            <form action=""></form>
-        </div>
+        }
+    </script>
+    <title>Cadastro cuidador</title>
+</head>
 
-        
+<body>
+    <main class=" h-screen flex items-center justify-center">
+        <div class="left-10 absolute top-10">
+            <img class="flex align-top h-40" src="/public/img/Logo2.png" alt="Logo Cuidaidoso">
+        </div>
+        <div class="bg-white max-w-[2000px] shadow-md mx-auto p-20">
+            <div class="flex justify-center">
+                <img class="w-60" src="public/img/logocadastro.png" alt="Logo cadastro">
+            </div>
+            <form class="grid grid-cols-2 ">
+                <div class="space-y-2">
+                    <p class="gap-2">Novo cadastro</p>
+                    <label class="input input-bordered flex items-center gap-2 custom-label">
+                        <input placeholder="Nome" type="text" class="grow" required />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2 custom-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="h-4 w-4 ">
+                            <path
+                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+                        </svg>
+                        <input type="text" class="grow" placeholder="Username" required />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2 custom-label">
+                        <input placeholder="Senha" type="password" class="grow" required />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2 custom-label">
+                        <input placeholder="Confirmar Senha" type="password" class="grow" required />
+                    </label>
+                    <label class="flex items-center gap-2 custom-label">
+                        <select class="select select-bordered w-full max-w-xs custom-select" required>
+                            <option disabled selected>Gênero</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="nao-binario">Não-binário</option>
+                            <option value="outro">Outro</option>
+                            <option value="prefiro-nao-dizer">Prefiro não dizer</option>
+                        </select>
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2 custom-label">
+
+                        <input placeholder="Cpf" type="text" id="cpf" name="cpf" maxlength="14"
+                            oninput="formatCPF(this)" required>
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2 custom-label ">
+                        <input type="date" id="DataNascimento" name="DataNascimento" required>
+                    </Label>
+                    <div class="flex justify-center space-x-4 mt-8">
+                        <button class="bg-greenlight px-6 py-2 rounded-md text-black font-bold "
+                            type="submit">Entrar</button>
+                    </div>
+                </div>
+                <div class="space-y-2 space-x-2 mt-8">
+                    <label class="mx-2 mr-auto input input-bordered flex items-center gap-2 custom-label">
+                        <input type="text" class="grow" placeholder="Formação" required />
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2 custom-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="h-4 w-4 ">
+                            <path
+                                d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
+                            <path
+                                d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
+                        </svg>
+                        <input type="text" class="grow" placeholder="Email" required />
+                    </label>
+                    <label for="cep" class="input input-bordered flex items-center gap-2 custom-label">
+                        <input type="text" id="cep" placeholder="Cep" name="cep" maxlength="8" pattern="\d{8}"
+                            oninput="formatCep(this)" required>
+                    </label>
+                    <label for="cidade" class="input input-bordered flex items-center gap-2 custom-label">
+                        <input type="text" placeholder="Cidade" id="cidade" name="cidade" maxlength="50" required>
+                    </label>
+                    <label for="bairro" class="input input-bordered flex items-center gap-2 custom-label">
+                        <input type="text" placeholder="Bairro" id="bairro" name="bairro" maxlength="50" required>
+                    </label>
+                    <label for="numero" class="input input-bordered flex items-center gap-2 custom-label">
+                        <input type="text" placeholder="Número" id="numero" name="numero" maxlength="10" required>
+                    </label>
+                    <label for="complemento" class="input input-bordered flex items-center gap-2 custom-label">
+                        <input type="text" placeholder="Complemento" id="complemento" name="complemento" maxlength="50">
+                    </label>
+                    <div class="flex justify-center space-x-4 mt-8">
+                        <button class="bg-redlight px-6 py-2 rounded-md text-black font-bold"
+                            type="button">Voltar</button></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        </div>
     </main>
 </body>
 </html>
