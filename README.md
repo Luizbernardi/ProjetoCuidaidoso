@@ -1,6 +1,6 @@
-<div align=center><img  src="/public/img/logo.png" width="200px"></div>
+<div align=center><img  src="/public/img/Logo.png" width="200px"></div>
 
-<h3 align=center>Cuidaidoso é a solução definitiva para encontrar o cuidador ideal para idosos. Conectamos você a profissionais qualificados e de confiança, garantindo o cuidado e a atenção que seus entes queridos merecem.</h3>
+<h3 align=center>Cuidaidoso é a solução definitiva para encontrar o cuidador ideal para idosos.</h3>
 <br>
 <div align=Left><img  src="/public/img/Projeto Cuidaidoso.png" width="1000px"></div>
 
