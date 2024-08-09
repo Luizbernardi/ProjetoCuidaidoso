@@ -11,6 +11,7 @@ module.exports = {
         redbackground: '#EED0D0',
         orangetext: '#C25500',
         tela1white: '#ffffff',
+
       }
     }
   },
