@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            redlight: '#E55959',
+            greenlight: '#7FCDCD',
+            graylight: '#E7E7E7',
+            graytext: '#D9D9D9'
+          }
+        }
+      }
+    }
+  </script>
+  <title>Login Cuidaidoso</title>
+</head>
+
+<body>
+  <main class="flex h-screen lg:flex-row flex-col">
+    <div class="lg:w-[50%] hidden lg:block ">
+      <img class="w-full h-full" src="./public/img/medium-shot-nurse-old-patient.jpg" alt="login Cuidaidoso">
+    </div>
+    <div class="lg:w-[50%] flex justify-center items-center h-full mx-4">
+      <form class="flex-col flex " method="post">
+
+        <img src="./public/img/Logo.png" alt="Logo Cuidaidoso">
+        <p class="my-6 text-3xl font-bold">
+          Preencha os campos para fazer o login.
+        </p>
+        <!-- <label class="my-2 " for="email">Email:</label> -->
+        <input class="py-2 px-2 mb-2 border rounded-md text-2xl" placeholder="Email" type="email" name="email" id="email"
+          required>
+        <!-- <label for="senha">Senha:</label> -->
+        <input class="py-2 px-2 mb-4 border rounded-md text-2xl" placeholder="Senha" type="password" name="senha" id="senha"
+          required>
+        <div class=" lg:justify-start flex justify-center gap-4">
+          <button class="bg-greenlight px-6 py-2 rounded-md text-black font-bold text-xl  " type="submit">Entrar</button>
+          <a href="/"><button class="bg-redlight px-6 py-2 rounded-md text-black font-bold text-xl"
+              type="button">Voltar</button></a>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>
