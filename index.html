@@ -1,70 +1,69 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              redlight: "#E55959",
+              greenlight: "#7FCDCD",
+              graylight: "#E7E7E7",
+              graytext: "#D9D9D9",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Landpage</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="src/css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-    rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            redlight: '#E55959',
-            greenlight: '#7FCDCD',
-            graylight: '#E7E7E7',
-            graytext: '#D9D9D9'
-          } 
-        }
-      }
-    }
-  </script>
-  <title>Landpage</title>
-</head>
-
-<body>
-    <header class="fixed top-0 left-0 w-full bg-gray-500 bg-opacity-20 shadow-md h-full">
-        <nav class="flex items-center justify-between max-w-´[1200px] w-full p-5">
-            <div>
-          <a href="/"><img class="w-32 mx-24" src="./public/img/logo2.png"></a>
-            </div>
-            <ul class="flex justify-between items-center space-x-5 mr-24">
-            
-                <li class="text-black font-bold">
-                  <a href="/">Início</a>
-                </li>
-                <li class="text-black font-bold">
-                  <a href="/#beneficios">Beneficios</a>
-                </li>
-                <li class="text-black font-bold">
-                  <a href="/#historia">História</a>
-                </li>
-                <li class="text-black font-bold">
-                  <a href="/#depoimentos">Depoimentos</a>
-                </li>
-                <li class="text-black font-bold">
-                  <a href="/#contato">Contato</a>
-                </li>
-            </ul>
-        </nav>
+  <body>
     <header>
-  <main class="flex h-screen lg:flex-row flex-col bg-graytext">
-    <div class="lg:w-[50%] hidden lg:block ">
-      <img class="w-full h-full" src="./public/img/login.png" alt="login Cuidaidoso">
-    </div>
-    <div class="lg:w-[50%] flex justify-center items-center h-full mx-4">
-        <nav>
-            
-        </nav>
-      </form>
-    </div>
-  </main>
-</body>
-
+      <nav
+        class="fixed flex items-center justify-between h-20 w-full p-5 bg-[#3b3b3b] bg-opacity-20 shadow-sm"
+      >
+        <div>
+          <a href="/"><img class="w-48 mx-24" src="./public/img/logo.png" /></a>
+        </div>
+        <ul class="flex justify-between items-center space-x-5 mr-24">
+          <li class="text-black font-bold text-lg">
+            <a href="/">Início</a>
+          </li>
+          <li class="text-black font-bold text-lg">
+            <a href="/#beneficios">Benefícios</a>
+          </li>
+          <li class="text-black font-bold text-lg">
+            <a href="/#historia">História</a>
+          </li>
+          <li class="text-black font-bold text-lg">
+            <a href="/#depoimentos">Depoimentos</a>
+          </li>
+          <li class="text-black font-bold text-lg">
+            <a href="/#contato">Contato</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="flex lg:flex-row flex-col bg-graytext">
+      <div class="w-full lg:block bg-no-repeat bg-contain h-[80%]">
+        <img
+          class="w-full object-contain"
+          src="./public/img/bgpark.png"
+          alt="Fundo de uma floresta num parque"
+        />
+      </div>
+    </main>
+    <section class="h-screen w-full flex bg-white"></section>
+  </body>
 </html>
