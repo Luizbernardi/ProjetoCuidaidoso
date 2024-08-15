@@ -1,73 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              redlight: "#E55959",
-              greenlight: "#7FCDCD",
-              graylight: "#E7E7E7",
-              graytext: "#D9D9D9",
-            },
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            redlight: "#E55959",
+            greenlight: "#7FCDCD",
+            graylight: "#E7E7E7",
+            graytext: "#D9D9D9",
           },
         },
-      };
-    </script>
-    <title>Landpage</title>
-  </head>
+      },
+    };
+  </script>
+  <title>Landpage</title>
+</head>
 
-  <body>
-    <header>
-      <nav
-        class="fixed flex items-center justify-between h-20 w-full p-5 bg-[#3b3b3b] bg-opacity-20 shadow-sm"
-      >
-        <div>
-          <a href="/"><img class="w-48 mx-24" src="./public/img/logo.png" /></a>
-        </div>
-        <ul class="flex justify-between items-center space-x-5 mr-24">
-          <li class="text-black font-bold text-lg">
-            <a href="/">Início</a>
-          </li>
-          <li class="text-black font-bold text-lg">
-            <a href="/#beneficios">Benefícios</a>
-          </li>
-          <li class="text-black font-bold text-lg">
-            <a href="/#historia">História</a>
-          </li>
-          <li class="text-black font-bold text-lg">
-            <a href="/#depoimentos">Depoimentos</a>
-          </li>
-          <li class="text-black font-bold text-lg">
-            <a href="/#contato">Contato</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main>
+<body>
+  <header>
+    <nav class="fixed flex items-center justify-between h-20 w-full p-5 bg-[#3b3b3b] bg-opacity-20 shadow-sm">
       <div>
-        <img
-          class="w-full object-contain"
-          src="./public/img/bgpark.png"
-          alt="Fundo de uma floresta num parque"
-        />
+        <a href="/"><img class="w-48 mx-24" src="./public/img/logo.png" /></a>
       </div>
-    </main>
-    <section class="h-screen w-full flex"></section>
-    <footer>
-      <div class="flex flex-col items-center justify-center h-32 text-[#6B6B6B]">
-        <p>Cuidaidoso© todos os direitos reservados.</p>
-      </div>
-  </body>
+      <ul class="flex justify-between items-center space-x-5 mr-24">
+        <li class="text-black font-bold text-lg">
+          <a href="/">Início</a>
+        </li>
+        <li class="text-black font-bold text-lg">
+          <a href="/#beneficios">Benefícios</a>
+        </li>
+        <li class="text-black font-bold text-lg">
+          <a href="/#historia">História</a>
+        </li>
+        <li class="text-black font-bold text-lg">
+          <a href="/#depoimentos">Depoimentos</a>
+        </li>
+        <li class="text-black font-bold text-lg">
+          <a href="/#contato">Contato</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div>
+      <img class="w-full object-contain" src="./public/img/bgpark.png" alt="Fundo de uma floresta num parque" />
+    </div>
+  </main>
+  <section class="h-screen w-full flex"></section>
+  <footer>
+    <div class="flex flex-col items-center justify-center h-32 text-[#6B6B6B]">
+      <p>Cuidaidoso© todos os direitos reservados.</p>
+    </div>
+</body>
+
 </html>
