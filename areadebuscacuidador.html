@@ -139,14 +139,27 @@
                 <div class="text-xl absolute top-5 left-10 p-4 justify-between">
                     <div class="space-y-4">
                         <p>Filtrar por:</p>
-
-
                     </div>
-                    <div>
+                    <form class="mt-2 grid grid-cols-2 space-x-2">
+                        <div class="space-y-2">
+                            <label for="nome" class="input input-bordered flex items-center gap-2 custom-label">
+                                <input id="nome" name="nome" placeholder="Nome" type="text" class="grow" />
+                            </label>
+                            <label for="formacao" class="input input-bordered flex items-center gap-2 custom-label">
+                                <input id="formacao" name="formacao" placeholder="Formação" type="text" class="grow" />
+                            </label>
+                        </div>
+                        <div class=" space-y-2">
+                            <label for="cidade" class="input input-bordered flex items-center gap-2 custom-label">
+                                <input type="text" placeholder="Cidade" id="cidade" name="cidade" maxlength="50">
+                            </label>
 
-                    </div>
+                            <div class="flex justify-center space-x-4 mt-8">
+                                <button class="bg-greenlight w-full py-2 rounded-md text-black font-bold "
+                                    type="submit">Buscar</button>
+                            </div>
+                    </form>
                 </div>
-
             </div>
         </div>
 
