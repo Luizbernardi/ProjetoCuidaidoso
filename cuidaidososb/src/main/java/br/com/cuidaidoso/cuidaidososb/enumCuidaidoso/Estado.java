@@ -51,13 +51,22 @@ public enum Estado {
      * @return o enum da Unidade da Federação
      * @throws IllegalArgumentException caso não ache o enum pelo nome da UF
      */
-    public static Estado fromUF(final String nomeUf) {
-        for (final Estado uf : Estado.values()) {
-            if (uf.nome.equalsIgnoreCase(nomeUf)) {
-                return uf;
+    public static Estado fromUF(String uf) {
+        for (Estado estado : values()) {
+            if (estado.nome.equalsIgnoreCase(uf) || estado.sigla.equalsIgnoreCase(uf)) {
+                return estado;
             }
         }
-        throw new IllegalArgumentException(nomeUf);
+        throw new IllegalArgumentException(uf);
+    }
+
+    public static Estado fromNome(final String nome) {
+        for (final Estado estado : Estado.values()) {
+            if (estado.nome.equalsIgnoreCase(nome)) {
+                return estado;
+            }
+        }
+        throw new IllegalArgumentException("Estado não encontrado: " + nome);
     }
 
     /**
@@ -69,12 +78,12 @@ public enum Estado {
      * @throws IllegalArgumentException caso a sigla da UF não exista
      */
     public static Estado fromSigla(final String sigla) {
-        for (final Estado uf : Estado.values()) {
-            if (uf.sigla.equalsIgnoreCase(sigla)) {
-                return uf;
+        for (final Estado estado : Estado.values()) {
+            if (estado.sigla.equalsIgnoreCase(sigla)) {
+                return estado;
             }
         }
-        throw new IllegalArgumentException(sigla);
+        throw new IllegalArgumentException("sigla de estado invalida: " + sigla);
     }
 
     /**

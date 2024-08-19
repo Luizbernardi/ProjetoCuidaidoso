@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import br.com.cuidaidoso.cuidaidososb.entity.Cuidador;
+import br.com.cuidaidoso.cuidaidososb.enumCuidaidoso.Estado;
 import br.com.cuidaidoso.cuidaidososb.repository.CuidadorRepository;
 
 @RestController
@@ -57,4 +58,11 @@ public class CuidadorControler {
     public void delete(@PathVariable(value = "id") Long cuidadorId) {
         cuidadorRepository.deleteById(cuidadorId);
     }
+
+    @GetMapping("/cuidadores/sigla/{estado}")
+    public List<Cuidador> getBySiglaEstado(@PathVariable(value = "estado") String estadoSigla) {
+        Estado estado = Estado.fromSigla(estadoSigla);
+        return cuidadorRepository.findByEstado(estado);
+    }
+
 }
