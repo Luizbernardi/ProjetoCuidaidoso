@@ -9,7 +9,7 @@ import br.com.cuidaidoso.cuidaidososb.entity.Cuidador;
 import br.com.cuidaidoso.cuidaidososb.repository.CuidadorRepository;
 
 @RestController
-@RequestMapping("/api/cuidador/v1")
+@RequestMapping("/api/cuidaidoso/v1")
 public class CuidadorControler {
 
     @Autowired
