@@ -31,8 +31,10 @@ public class Cuidador {
     private String userName;
 
     @NotNull
+    @Size(min = 3)
     private String nome;
 
+    @Size(min = 3)
     @NotNull
     private String sobrenome;
 
@@ -47,6 +49,7 @@ public class Cuidador {
 
     @NotNull
     @Size(min = 11, max = 11, message = "O CPF deve ter 11 dígitos")
+    @Column(unique = true)
     private String cpf;
 
     @NotNull
@@ -60,6 +63,7 @@ public class Cuidador {
     @Enumerated(EnumType.STRING)
     private Estado estado;
 
+    @Size(min = 4)
     private String formacao;
 
     public Cuidador() {

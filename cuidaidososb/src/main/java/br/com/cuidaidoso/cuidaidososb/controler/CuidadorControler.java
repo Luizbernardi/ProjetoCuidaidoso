@@ -64,5 +64,4 @@ public class CuidadorControler {
         Estado estado = Estado.fromSigla(estadoSigla);
         return cuidadorRepository.findByEstado(estado);
     }
-
 }
