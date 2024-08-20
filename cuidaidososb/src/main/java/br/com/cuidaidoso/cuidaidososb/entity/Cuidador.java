@@ -16,11 +16,13 @@ import lombok.Setter;
 import br.com.cuidaidoso.cuidaidososb.enumCuidaidoso.Estado;
 import br.com.cuidaidoso.cuidaidososb.enumCuidaidoso.TipoGenero;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 @Getter
 @Setter
 @Entity
 public class Cuidador {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -40,7 +42,7 @@ public class Cuidador {
 
     @NotNull
     @Size(min = 8, message = "A senha deve ter pelo menos 8 caracteres")
-    @jakarta.validation.constraints.Pattern(regexp = "^(?=.*[A-Z])(?=.*[^a-zA-Z\\d]).+$", message = "A senha deve conter pelo menos uma letra maiúscula e um caractere especial")
+    @Pattern(regexp = "^(?=.*[A-Z])(?=.*[^a-zA-Z\\d]).+$", message = "A senha deve conter pelo menos uma letra maiúscula e um caractere especial")
     private String senha;
 
     @NotNull
@@ -51,6 +53,10 @@ public class Cuidador {
     @Size(min = 11, max = 11, message = "O CPF deve ter 11 dígitos")
     @Column(unique = true)
     private String cpf;
+
+    @NotNull
+    @Size(min = 11)
+    private String telefone;
 
     @NotNull
     private LocalDate dataNascimento;
@@ -65,6 +71,13 @@ public class Cuidador {
 
     @Size(min = 4)
     private String formacao;
+
+    @NotNull
+    @Pattern(regexp = "\\d{16}", message = "O número do cartão deve ter 16 dígitos")
+    private String numeroCartao;
+
+    @NotNull
+    private LocalDate dataValidadeCartao;
 
     public Cuidador() {
     }
