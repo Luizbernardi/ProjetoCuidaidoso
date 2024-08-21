@@ -24,9 +24,6 @@ public class Cobranca {
     @NotNull
     private LocalDate dataDebito;
 
-    @NotNull
-    private Double valor;
-
     @ManyToOne
     @JoinColumn(name = "cartao_id")
     private Cartao cartao;
