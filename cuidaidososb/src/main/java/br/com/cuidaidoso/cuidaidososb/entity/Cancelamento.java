@@ -1,38 +1,37 @@
 package br.com.cuidaidoso.cuidaidososb.entity;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
-
 @Getter
 @Setter
 @Entity
-public class Cobranca {
+public class Cancelamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long idCobranca;
+    private long idCancelamento;
+
+    @NotBlank(message = "O motivo do cancelamento não pode ser vazio")
+    private String motivo;
 
     @NotNull
-    private LocalDate dataDebito;
-
-    @NotNull
-    private Double valor;
+    private LocalDate dataCancelamento;
 
     @ManyToOne
-    @JoinColumn(name = "cartao_id")
-    private Cartao cartao;
+    @JoinColumn(name = "historico_plano_id")
+    private HistoricoPlano historicoPlano;
 
-    @ManyToOne
-    @JoinColumn(name = "plano_id")
-    private Plano plano;
-
+    public Cancelamento() {
+    }
 }

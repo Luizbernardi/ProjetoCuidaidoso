@@ -1,5 +1,6 @@
 package br.com.cuidaidoso.cuidaidososb.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -7,9 +8,12 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
 import java.time.LocalDate;
+import java.util.List;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -72,12 +76,11 @@ public class Cuidador {
     @Size(min = 4)
     private String formacao;
 
-    @NotNull
-    @Pattern(regexp = "\\d{16}", message = "O número do cartão deve ter 16 dígitos")
-    private String numeroCartao;
+    @OneToMany(mappedBy = "cuidador", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Cartao> cartoes;
 
-    @NotNull
-    private LocalDate dataValidadeCartao;
+    @OneToMany(mappedBy = "cuidador")
+    private List<HistoricoPlano> historicoPlanos;
 
     public Cuidador() {
     }
