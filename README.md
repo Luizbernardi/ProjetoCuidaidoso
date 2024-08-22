@@ -1,8 +1,8 @@
-<div align=center><img  src="/public/img/Logo.png" width="200px"></div>
+<div align=center><img  src="/cuidaidososb/src/main/resources/static/img/Logo.png" width="200px"></div>
 
 <h3 align=center>Cuidaidoso é a solução definitiva para encontrar o cuidador ideal para idosos.</h3>
 <br>
-<div align=Left><img  src="/public/img/Projeto Cuidaidoso.png" width="1000px"></div>
+<div align=Left><img  src="/cuidaidososb/src/main/resources/static/img/Projeto Cuidaidoso.png" width="1000px"></div>
 
 <h2 align=left>Como rodar</h2>
 
