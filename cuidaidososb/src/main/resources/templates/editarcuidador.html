@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="/cuidaidososb/src/main/resources/static/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -21,19 +21,22 @@
                         redlight: '#E55959',
                         greenlight: '#7FCDCD',
                         graylight: '#E7E7E7',
-                        graytext: '#D9D9D9'
+                        graytext: '#D9D9D9',
+                        redbackground: '#EED0D0',
+                        orangetext: '#C25500'
                     }
                 }
             }
         }
     </script>
-    <title>Busca de cuidadores</title>
+    <title>Editar cuidador</title>
 </head>
 
 <body>
     <main class="h-screen flex">
         <div class="lg:w-[20%] p-10 flex justify-between h-full items-center lg:flex-col bg-white">
-            <img class="align-middle w-56" src="public/img/logo2.png" alt="Logo2 Cuidaidoso">
+            <img class="align-middle w-56" src="/cuidaidososb/src/main/resources/static/img/logo2.png"
+                alt="Logo2 Cuidaidoso">
             <div class="space-y-5 align-middle a flex flex-col flex-wrap mt-32 h-full">
                 <div class="flex items-center">
                     <button class="btn btn-ghost flex justify-center w-full"> <svg xmlns="http://www.w3.org/2000/svg"
@@ -87,9 +90,10 @@
                         </script>
                     </p>
                 </div>
+
             </div>
         </div>
-        <div class="lg:w-[80%] flex relative items-center justify-center">
+        <div class="lg:w-[80%] flex justify-center items-center relative">
             <div class="absolute top-10 left-5 flex items-center justify-between w-[90%]">
                 <div class="flex items-center">
                     <a class="justify-center flex w-full items-center" href="detalhamentoCuidador.html">
@@ -109,12 +113,13 @@
                         </defs>
                         <use fill-rule="evenodd" href="#weuiArrowOutlined0" transform="rotate(-180 5.02 9.505)" />
                     </svg>
-                    <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="3em" height="2em" viewBox="0 0 26 26">
-                        <path fill="#454545"
-                            d="M10 .188A9.81 9.81 0 0 0 .187 10A9.81 9.81 0 0 0 10 19.813c2.29 0 4.393-.811 6.063-2.125l.875.875a1.845 1.845 0 0 0 .343 2.156l4.594 4.625c.713.714 1.88.714 2.594 0l.875-.875a1.84 1.84 0 0 0 0-2.594l-4.625-4.594a1.82 1.82 0 0 0-2.157-.312l-.875-.875A9.812 9.812 0 0 0 10 .188M10 2a8 8 0 1 1 0 16a8 8 0 0 1 0-16M4.937 7.469a5.45 5.45 0 0 0-.812 2.875a5.46 5.46 0 0 0 5.469 5.469a5.5 5.5 0 0 0 3.156-1a7 7 0 0 1-.75.03a7.045 7.045 0 0 1-7.063-7.062c0-.104-.005-.208 0-.312" />
+                    <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="3em" height="2em" viewBox="0 0 24 24">
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M5 8a4 4 0 1 1 7.796 1.263l-2.533 2.534A4 4 0 0 1 5 8m4.06 5H7a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h2.172a3 3 0 0 1-.114-1.588l.674-3.372a3 3 0 0 1 .82-1.533zm9.032-5a2.9 2.9 0 0 0-2.056.852L9.967 14.92a1 1 0 0 0-.273.51l-.675 3.373a1 1 0 0 0 1.177 1.177l3.372-.675a1 1 0 0 0 .511-.273l6.07-6.07a2.91 2.91 0 0 0-.944-4.742A2.9 2.9 0 0 0 18.092 8"
+                            clip-rule="evenodd" />
                     </svg>
                     <p class="ml-2" style="white-space: nowrap;">
-                        Busca de cuidadores
+                        Editando Perfil
                     </p>
                 </div>
                 <div class="flex items-center space-x-2">
@@ -132,39 +137,60 @@
                     </a>
                 </div>
             </div>
-            <div class="bg-white shadow-md mx-auto p-8 absolute top-32 w-[95%] ">
-                <div class="justify-end flex mr-36">
-                    <img src="public/img/Group 22.png" alt="Imagem Edição Cadastro">
+            <div class="bg-white max-w-[2500px] shadow-md mx-auto p-28 absolute top-40 space-y-10">
+                <div class="flex justify-center">
+                    <img class="flex justify-center items-center align-middle"
+                        src="/cuidaidososb/src/main/resources/static/img/Group 22.png" alt="Imagem Edição Cadastro">
                 </div>
-                <div class="text-xl absolute top-5 left-10 p-4 justify-between">
+                <form class="col-span-1 grid grid-cols-2 my-5">
                     <div class="space-y-4">
-                        <p>Filtrar por:</p>
-                    </div>
-                    <form class="mt-2 grid grid-cols-2 space-x-2">
-                        <div class="space-y-2">
-                            <label for="nome" class="input input-bordered flex items-center gap-2 custom-label">
-                                <input id="nome" name="nome" placeholder="Nome" type="text" class="grow" />
-                            </label>
-                            <label for="formacao" class="input input-bordered flex items-center gap-2 custom-label">
-                                <input id="formacao" name="formacao" placeholder="Formação" type="text" class="grow" />
-                            </label>
+                        <p class="text-gray-600">Editar:</p>
+                        <label class="input input-bordered flex items-center gap-2 custom-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="h-4 w-4 ">
+                                <path
+                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+                            </svg>
+                            <input type="text" value="Maria Joana" class="grow" placeholder="Nome" />
+                        </label>
+                        <label class="input input-bordered flex items-center gap-2 custom-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="h-4 w-4 ">
+                                <path
+                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+                            </svg>
+                            <input type="tel" class="grow" value="991910523" placeholder="Telefone" pattern="[0-9]*"
+                                inputmode="numeric" />
+                        </label>
+                        <label class="input input-bordered flex items-center gap-2 custom-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="h-4 w-4 ">
+                                <path
+                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+                            </svg>
+                            <input type="email" class="grow" value="mariajoana2@gmail.com" placeholder="Email" />
+                        </label>
+                        <div class="flex justify-center space-x-4 mt-8">
+                            <button class="bg-greenlight px-6 py-2 rounded-md text-black font-bold "
+                                type="submit">Salvar</button>
                         </div>
-                        <div class=" space-y-2">
-                            <label for="cidade" class="input input-bordered flex items-center gap-2 custom-label">
-                                <input type="text" placeholder="Cidade" id="cidade" name="cidade" maxlength="50">
-                            </label>
-
-                            <div class="flex justify-center space-x-4 mt-8">
-                                <button class="bg-greenlight w-full py-2 rounded-md text-black font-bold "
-                                    type="submit">Buscar</button>
+                    </div>
+                    <div class="space-y-2 space-x-2 ml-auto flex flex-col items-center">
+                        <div class="avatar">
+                            <div class="w-32 rounded-full">
+                                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
                             </div>
-                    </form>
-                </div>
+                        </div>
+                        <div class="w-full">
+                            <input placeholder="Editar foto" type="file" class="file-input w-40" />
+                        </div>
+                    </div>
+                </form>
+
+
+
             </div>
         </div>
-
-        </div>
-
     </main>
 </body>
 

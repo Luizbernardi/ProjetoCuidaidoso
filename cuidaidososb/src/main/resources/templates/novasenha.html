@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="/cuidaidososb/src/main/resources/static/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -34,18 +34,21 @@
 <body>
     <main class="flex h-screen lg:flex-row flex-col">
         <div class="lg:w-[50%] hidden lg:block">
-            <img class="w-full h-full" src="/public/img/old-patient-suffering-from-parkinson.jpg" alt="recuperação">
+            <img class="w-full h-full"
+                src="/cuidaidososb/src/main/resources/static/img/old-patient-suffering-from-parkinson.jpg"
+                alt="recuperação">
         </div>
         <div class="lg:w-[50%] flex justify-center items-center h-full mx-4">
             <form class="flex-col flex" action="/" method="post">
-                <img src="/public/img/Logo.png" alt="Logo Cuidaidoso">
+                <img src="/cuidaidososb/src/main/resources/static/img/Logo.png" alt="Logo Cuidaidoso">
                 <p class="my-4 font-bold text-4xl">
                     Crie uma nova senha.</p>
                 <p class="my-4 font-bold text-2xl">
                     Preencha os campos para criar uma nova senha.</p>
                 <span class="flex items-center gap-5 bg-redbackground border border-red-600 rounded-md p-2">
                     <div>
-                        <svg class="text-red-400" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                        <svg class="text-red-400" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                            viewBox="0 0 24 24">
                             <path fill="currentColor" fill-rule="evenodd"
                                 d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10m-.75-12v7h1.5v-7zM12 9a1 1 0 1 0 0-2a1 1 0 0 0 0 2" />
                         </svg>
@@ -72,6 +75,7 @@
         </div>
 
     </main>
- <!-- FAZER JAVA SCRIPT VALIDAÇÃO DE SENHA DIFERENTE -->
+    <!-- FAZER JAVA SCRIPT VALIDAÇÃO DE SENHA DIFERENTE -->
 </body>
+
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="/cuidaidososb/src/main/resources/static/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -34,14 +34,17 @@
 <body>
     <main class="flex h-screen lg:flex-row flex-col">
         <div class="lg:w-[50%] hidden lg:block">
-            <img class="w-full h-full" src="./public/img/old-patient-suffering-from-parkinson.jpg" alt="imagem recuperação">
+            <img class="w-full h-full"
+                src="/cuidaidososb/src/main/resources/static/img/old-patient-suffering-from-parkinson.jpg"
+                alt="imagem recuperação">
         </div>
         <div class="lg:w-[50%] flex justify-center items-center h-full mx-4">
             <form class="flex-col flex" method="post">
-                <img src="./public/img/Logo.png" alt="Logo Cuidaidoso">
+                <img src="/cuidaidososb/src/main/resources/static/img/Logo.png" alt="Logo Cuidaidoso">
                 <p class="text-4xl  font-bold my-2">Esqueceu sua senha?<br>Vamos recuperar!</p>
                 <p class="text-xl font-bold my-2">Por favor, digite seu email para redefinir sua senha.</p>
-                <span id="error-message" class=" my-2 flex items-center gap-5 bg-redbackground border-red-600 border rounded-md p-2">
+                <span id="error-message"
+                    class=" my-2 flex items-center gap-5 bg-redbackground border-red-600 border rounded-md p-2">
                     <div>
                         <svg class="text-red-400" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                             viewBox="0 0 24 24">
@@ -58,7 +61,8 @@
                         </strong>
                     </div>
                 </span>
-                <span id="success-message" class=" bg-green-300 border-green-500 my-2 flex items-center gap-5 border rounded-md p-2"
+                <span id="success-message"
+                    class=" bg-green-300 border-green-500 my-2 flex items-center gap-5 border rounded-md p-2"
                     style="display:none;">
                     <div>
                         <svg class="text-green-500" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em"
@@ -76,8 +80,8 @@
                         </strong>
                     </div>
                 </span>
-                <input class="my-2 py-4 px-2 mb-2 border rounded-md text-xl" class="text-3x1" placeholder="Email" type="email" id="email"
-                    name="email" required>
+                <input class="my-2 py-4 px-2 mb-2 border rounded-md text-xl" class="text-3x1" placeholder="Email"
+                    type="email" id="email" name="email" required>
                 <div class=" my-2 lg:justify-start flex justify-center gap-4">
                     <button class="bg-greenlight px-6 py-2 rounded-md text-black font-bold text-xl"
                         type="submit">Enviar</button>
@@ -88,4 +92,5 @@
         </div>
     </main>
 </body>
+
 </html>
