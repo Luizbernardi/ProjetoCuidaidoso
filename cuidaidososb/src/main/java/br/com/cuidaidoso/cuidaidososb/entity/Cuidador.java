@@ -14,7 +14,6 @@ import java.time.LocalDate;
 import lombok.Getter;
 import lombok.Setter;
 
-import br.com.cuidaidoso.cuidaidososb.enumCuidaidoso.Estado;
 import br.com.cuidaidoso.cuidaidososb.enumCuidaidoso.TipoGenero;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -65,10 +64,6 @@ public class Cuidador {
     @NotNull
     @Email(message = "O email deve ser válido")
     private String email;
-
-    @NotNull
-    @Enumerated(EnumType.STRING)
-    private Estado estado;
 
     @Size(min = 4)
     private String formacao;

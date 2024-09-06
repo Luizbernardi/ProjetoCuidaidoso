@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import br.com.cuidaidoso.cuidaidososb.entity.Cuidador;
-import br.com.cuidaidoso.cuidaidososb.enumCuidaidoso.Estado;
 import br.com.cuidaidoso.cuidaidososb.repository.CuidadorRepository;
 
 @RestController
@@ -38,7 +37,6 @@ public class CuidadorControler {
         cuidador.setCpf(cuidadorDetails.getCpf());
         cuidador.setDataNascimento(cuidadorDetails.getDataNascimento());
         cuidador.setEmail(cuidadorDetails.getEmail());
-        cuidador.setEstado(cuidadorDetails.getEstado());
         cuidador.setFormacao(cuidadorDetails.getFormacao());
 
         cuidadorRepository.save(cuidador);
@@ -59,9 +57,4 @@ public class CuidadorControler {
         cuidadorRepository.deleteById(cuidadorId);
     }
 
-    @GetMapping("/cuidadores/sigla/{estado}")
-    public List<Cuidador> getBySiglaEstado(@PathVariable(value = "estado") String estadoSigla) {
-        Estado estado = Estado.fromSigla(estadoSigla);
-        return cuidadorRepository.findByEstado(estado);
-    }
 }
