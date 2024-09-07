@@ -11,10 +11,26 @@ module.exports = {
         redbackground: '#EED0D0',
         orangetext: '#C25500',
         tela1white: '#ffffff',
-
-      }
-    }
+      },
+      boxShadow: {
+        'custom': '0px 4px 4px rgba(0, 0, 0, 1)', // Custom shadow
+      },
+      textShadow: {
+        'custom': '0px 4px 4px rgba(0, 0, 0, 1)', // Custom text shadow
+      },
+    },
   },
-  plugins: [],
-}
-
+  plugins: [
+    function ({ addUtilities, theme }) {
+      const textShadow = theme('textShadow');
+      const textShadowUtilities = Object.keys(textShadow).map(key => {
+        return {
+          [`.text-shadow-${key}`]: {
+            textShadow: textShadow[key],
+          },
+        };
+      });
+      addUtilities(textShadowUtilities, ['responsive', 'hover']);
+    },
+  ],
+};
