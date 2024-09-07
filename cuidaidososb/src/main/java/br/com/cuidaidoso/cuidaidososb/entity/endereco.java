@@ -16,10 +16,10 @@ import lombok.Setter;
 @Setter
 @Entity
 public class Endereco {
-    
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
     @NotNull
     @Size(min = 8, max = 8, message = "O CEP deve ter 8 dígitos")
