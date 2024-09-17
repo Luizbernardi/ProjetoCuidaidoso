@@ -1,5 +1,6 @@
 package br.com.cuidaidoso.cuidaidososb.entity;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
@@ -24,7 +25,7 @@ public class AdminLog {
     private String acao;
 
     @NotNull
-    private LocalDateTime horaAcao;
+    private LocalDateTime horaAcao = LocalDateTime.now();
 
     @ManyToOne
     @JoinColumn(name = "admin_id")
