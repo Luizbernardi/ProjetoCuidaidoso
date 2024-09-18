@@ -16,10 +16,10 @@ import lombok.Setter;
 @Setter
 @Entity
 public class Endereco {
-    
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
     @NotNull
     @Size(min = 8, max = 8, message = "O CEP deve ter 8 dígitos")
@@ -55,6 +55,24 @@ public class Endereco {
     private Cuidador cuidador;
 
     public Endereco() {
+    }
+
+    public Endereco(long id,
+            @NotNull @Size(min = 8, max = 8, message = "O CEP deve ter 8 dígitos") @Pattern(regexp = "\\d{8}", message = "O CEP deve conter apenas dígitos") String cep,
+            @NotNull @Size(min = 3) @Pattern(regexp = "^[a-zA-Z\\s]+$", message = "O estado deve conter apenas letras") String estado,
+            @NotNull @Size(min = 3) @Pattern(regexp = "^[a-zA-Z\\s]+$", message = "A cidade deve conter apenas letras") String cidade,
+            @NotNull @Size(min = 3) @Pattern(regexp = "^[a-zA-Z\\s]+$", message = "O bairro deve conter apenas letras") String bairro,
+            @NotNull @Size(min = 1, max = 6, message = "O número deve ter entre 1 e 6 caracteres") @Pattern(regexp = "\\d{1,6}", message = "O número deve conter apenas dígitos") String numero,
+            @Size(min = 3) @Pattern(regexp = "^[a-zA-Z\\s]+$", message = "O complemento deve conter apenas letras") String complemento,
+            Cuidador cuidador) {
+        this.id = id;
+        this.cep = cep;
+        this.estado = estado;
+        this.cidade = cidade;
+        this.bairro = bairro;
+        this.numero = numero;
+        this.complemento = complemento;
+        this.cuidador = cuidador;
     }
 
 }
