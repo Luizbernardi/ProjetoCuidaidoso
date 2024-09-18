@@ -14,13 +14,13 @@ import br.com.cuidaidoso.cuidaidososb.repository.CuidadorRepository;
 import br.com.cuidaidoso.cuidaidososb.util.UploadUtil;
 
 @RestController
-@RequestMapping("/cuidador")
+@RequestMapping("cuidador")
 public class CuidadorControler {
 
     @Autowired
     private CuidadorRepository cuidadorRepository;
 
-    @GetMapping("/cadastro")
+    @GetMapping("cadastro")
     public ModelAndView cadastro(Cuidador cuidador) {
         ModelAndView mv = new ModelAndView("cuidador/cadastro");
         mv.addObject("usuario", new Cuidador());
