@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/cuidaidososb/src/main/resources/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        redlight: '#E55959',
+                        greenlight: '#7FCDCD',
+                        graylight: '#E7E7E7',
+                        graytext: '#D9D9D9',
+                        redbackground: '#EED0D0',
+                        orangetext: '#C25500'
+                    }
+                }
+            }
+        }
+    </script>
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <main class=" h-screen flex items-center justify-center">
+        <div class="left-10 absolute top-10">
+            <img class="flex align-top h-40" src="/cuidaidososb/src/main/resources/static/img/Logo2.png"
+                alt="Logo Cuidaidoso">
+        </div>
+        <div class="bg-white max-w-[2000px] shadow-md mx-auto p-20">
+            <div class="flex justify-center">
+                <img class="w-60" src="/cuidaidososb/src/main/resources/static/img/logocadastro.png"
+                    alt="Logo cadastro">
+            </div>
+
+
+            <form th:action="@{/cuidador/cadastro-cuidador}" th:object="${usuario}" method="post"
+                enctype="multipart/form-data" class="grid grid-cols-2 ">
+                <div class="space-y-2">
+                    <p class="gap-2">Novo cadastro</p>
+                    <label for="nome" class="input input-bordered flex items-center gap-2 custom-label">
+                        <input type="text" class="grow" autocomplete="off" th:field="*{nome}" id="nome"
+                            placeholder="Nome" required>
+                    </label>
+                    <label for="sobrenome" class="input input-bordered flex items-center gap-2 custom-label">
+                        <input type="text" class="grow" autocomplete="off" th:field="*{sobrenome}" id="sobrenome"
+                            placeholder="Sobrenome" required>
+                    </label>
+                    <label for="userName" class="input input-bordered flex items-center gap-2 custom-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="h-4 w-4 ">
+                            <path
+                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+                        </svg>
+                        <input type="text" class="grow" autocomplete="off" th:field="*{userName}" id="username"
+                            placeholder="Username" required>
+                    </label>
+                    <label for="senha" class="input input-bordered flex items-center gap-2 custom-label">
+                        <input type="password" class="grow" autocomplete="off" th:field="*{senha}" id="senha"
+                            placeholder="Senha" required>
+                    </label>
+                    <label for="genero" class="flex items-center gap-2 custom-label">
+                        <select name="genero" id="genero" th:field="*{genero}"
+                            class="select select-bordered w-full max-w-xs custom-select" required>
+                            <option disabled selected>Gênero</option>
+                            <option th:each="g : ${generoList}" th:value="${g.name()}" th:text="${g.getGenero()}">
+                            </option>
+                        </select>
+                    </label>
+                    <label for="cpf" class="input input-bordered flex items-center gap-2 custom-label">
+                        <input type="text" class="grow" autocomplete="off" th:field="*{cpf}" id="cpf" placeholder="Cpf"
+                            oninput="formatCPF(this)" maxlength="11" required>
+                    </label>
+                    <label for="telefone" class="input input-bordered flex items-center gap-2 custom-label">
+                        <input type="tel" class="grow" autocomplete="off" th:field="*{telefone}" id="telefone"
+                            placeholder="Telefone" maxlength="11" required>
+                    </label>
+                    <label for="dataNascimento" class="input input-bordered flex items-center gap-2 custom-label ">
+                        <input type="date" class="grow" autocomplete="off" th:field="*{dataNascimento}"
+                            id="dataNascimento" required>
+                    </label>
+                    <label for="perfil" class="flex items-center gap-2 custom-label">
+                        <select name="perfil" id="perfil" th:field="*{perfil}"
+                            class="select select-bordered w-full max-w-xs custom-select" required>
+                            <option disabled selected>Perfil</option>
+                            <option th:each="p : ${perfilList}" th:value="${p.name()}" th:text="${p.getPerfil()}">
+                            </option>
+                        </select>
+                    </label>
+                    <div class="flex justify-center space-x-4 mt-8">
+                        <button class="bg-greenlight px-6 py-2 rounded-md text-black font-bold "
+                            type="submit">Entrar</button>
+                    </div>
+                </div>
+                <div class="space-y-2 space-x-2 mt-8">
+                    <label for="formacao"
+                        class="mx-2 mr-auto input input-bordered flex items-center gap-2 custom-label">
+                        <input placeholder="Formação" type="text" class="grow" autocomplete="off" th:field="*{formacao}"
+                            id="formacao" required>
+                    </label>
+                    <label class="input input-bordered flex items-center gap-2 custom-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="h-4 w-4 ">
+                            <path
+                                d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
+                            <path
+                                d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
+                        </svg>
+                        <input placeholder="Email" type="text" class="grow" autocomplete="off" th:field="*{email}"
+                            id="email" required>
+                    </label>
+                    <label for="imagem" class="mx-2 mr-auto input input-bordered flex items-center gap-2 custom-label">
+                        <input placeholder="Imagem" type="text" class="grow" autocomplete="off" th:field="*{imagem}"
+                            id="imagem" required>
+                    </label>
+                    <label for="cep" class="input input-bordered flex items-center gap-2 custom-label">
+                        <input type="text" th:field="*{endereco.cep}" id="cep" placeholder="Cep" name="cep"
+                            maxlength="8" pattern="\d{8}" oninput="formatCep(this)" required>
+                    </label>
+                    <label for="estado" class="input input-bordered flex items-center gap-2 custom-label">
+                        <input type="text" th:field="*{endereco.estado}" id="estado" placeholder="Estado" name="estado"
+                            maxlength="50" pattern="^[a-zA-Z\s]+$" required>
+                    </label>
+                    <label for="cidade" class="input input-bordered flex items-center gap-2 custom-label">
+                        <input type="text" th:field="*{endereco.cidade}" id="cidade" placeholder="Cidade" name="cidade"
+                            maxlength="50" pattern="^[a-zA-Z\s]+$" required>
+                    </label>
+                    <label for="bairro" class="input input-bordered flex items-center gap-2 custom-label">
+                        <input type="text" th:field="*{endereco.bairro}" id="bairro" placeholder="Bairro" name="bairro"
+                            maxlength="50" pattern="^[a-zA-Z\s]+$" required>
+                    </label>
+                    <label for="numero" class="input input-bordered flex items-center gap-2 custom-label">
+                        <input type="text" th:field="*{endereco.numero}" id="numero" placeholder="Número" name="numero"
+                            maxlength="6" pattern="\d{1,6}" required>
+                    </label>
+                    <label for="complemento" class="input input-bordered flex items-center gap-2 custom-label">
+                        <input type="text" th:field="*{endereco.complemento}" id="complemento" placeholder="Complemento"
+                            name="complemento" maxlength="50" pattern="^[a-zA-Z\s]+$">
+                    </label>
+                    <div class="flex justify-center space-x-4 mt-8">
+                        <button class="bg-redlight px-6 py-2 rounded-md text-black font-bold"
+                            type="button">Voltar</button></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        </div>
+    </main>
+</body>
+
+</html>

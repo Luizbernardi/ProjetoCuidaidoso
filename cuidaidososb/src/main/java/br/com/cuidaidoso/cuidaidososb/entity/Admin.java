@@ -37,8 +37,9 @@ public class Admin extends User {
             @NotNull @Size(min = 11, max = 11, message = "O CPF deve ter 11 dígitos") @Pattern(regexp = "\\d{9}", message = "O CPF deve conter apenas dígitos") String cpf,
             @NotNull @Size(min = 11) @Pattern(regexp = "\\d{11}", message = "O telefone deve conter apenas dígitos") String telefone,
             @NotNull @Past(message = "A data de nascimento deve ser uma data no passado") @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}", message = "A data de nascimento deve estar no formato yyyy-MM-dd") LocalDate dataNascimento,
-            @NotNull @Email(message = "O email deve ser válido") String email, Perfil perfil, List<AdminLog> adminLog) {
-        super(id, userName, nome, sobrenome, senha, genero, cpf, telefone, dataNascimento, email, perfil);
+            @NotNull @Email(message = "O email deve ser válido") String email, String imagem, Perfil perfil,
+            List<AdminLog> adminLog) {
+        super(id, userName, nome, sobrenome, senha, genero, cpf, telefone, dataNascimento, email, imagem, perfil);
         this.adminLog = adminLog;
     }
 

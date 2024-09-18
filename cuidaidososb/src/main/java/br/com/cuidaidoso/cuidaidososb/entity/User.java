@@ -74,6 +74,8 @@ public abstract class User {
     @Column(unique = true)
     private String email;
 
+    private String imagem;
+
     private Perfil perfil;
 
     public User() {
@@ -89,7 +91,7 @@ public abstract class User {
             @NotNull @Size(min = 11, max = 11, message = "O CPF deve ter 11 dígitos") @Pattern(regexp = "\\d{9}", message = "O CPF deve conter apenas dígitos") String cpf,
             @NotNull @Size(min = 11) @Pattern(regexp = "\\d{11}", message = "O telefone deve conter apenas dígitos") String telefone,
             @NotNull @Past(message = "A data de nascimento deve ser uma data no passado") @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}", message = "A data de nascimento deve estar no formato yyyy-MM-dd") LocalDate dataNascimento,
-            @NotNull @Email(message = "O email deve ser válido") String email, Perfil perfil) {
+            @NotNull @Email(message = "O email deve ser válido") String email, String imagem, Perfil perfil) {
         this.id = id;
         this.userName = userName;
         this.nome = nome;
@@ -100,7 +102,14 @@ public abstract class User {
         this.telefone = telefone;
         this.dataNascimento = dataNascimento;
         this.email = email;
+        this.imagem = imagem;
         this.perfil = perfil;
     }
 
+    @Override
+    public String toString() {
+        return "User [id=" + id + ", userName=" + userName + ", nome=" + nome + ", sobrenome=" + sobrenome + ", senha="
+                + senha + ", genero=" + genero + ", cpf=" + cpf + ", telefone=" + telefone + ", dataNascimento="
+                + dataNascimento + ", email=" + email + ", imagem=" + imagem + ", perfil=" + perfil + "]";
+    }
 }

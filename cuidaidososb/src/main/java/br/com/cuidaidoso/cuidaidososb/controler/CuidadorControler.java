@@ -4,57 +4,58 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.com.cuidaidoso.cuidaidososb.entity.Cuidador;
+import br.com.cuidaidoso.cuidaidososb.enumCuidaidoso.Genero;
+import br.com.cuidaidoso.cuidaidososb.enumCuidaidoso.Perfil;
 import br.com.cuidaidoso.cuidaidososb.repository.CuidadorRepository;
+import br.com.cuidaidoso.cuidaidososb.util.UploadUtil;
 
 @RestController
-@RequestMapping("/api/cuidaidoso/v1")
+@RequestMapping("/cuidador")
 public class CuidadorControler {
 
     @Autowired
     private CuidadorRepository cuidadorRepository;
 
-    @GetMapping("/cuidadores")
-    public List<Cuidador> getAll() {
-        return cuidadorRepository.findAll();
+    @GetMapping("/cadastro")
+    public ModelAndView cadastro(Cuidador cuidador) {
+        ModelAndView mv = new ModelAndView("cuidador/cadastro");
+        mv.addObject("usuario", new Cuidador());
+        mv.addObject("generoList", Genero.values());
+        mv.addObject("perfilList", Perfil.values());
+
+        return mv;
     }
 
-    @PostMapping("/cuidadores")
-    public Cuidador create(@RequestBody Cuidador cuidador) {
-        return cuidadorRepository.save(cuidador);
+    @PostMapping("/cadastro-cuidador")
+    public ModelAndView cadastro(@ModelAttribute Cuidador cuidador, @RequestParam("file") MultipartFile imagem) {
+        ModelAndView mv = new ModelAndView("cuidador/cadastro");
+
+        mv.addObject("usuario", cuidador);
+
+        try {
+            if (UploadUtil.fazerUploadImagem(imagem)) {
+                cuidador.setImagem(imagem.getOriginalFilename());
+            }
+            cuidadorRepository.save(cuidador);
+            System.out.println("Cuidador cadastrado com sucesso" + cuidador.getUserName() + " " + cuidador.getImagem());
+            return home();
+
+        } catch (Exception e) {
+            mv.addObject("msgErro", e.getMessage());
+            System.out.println("Erro ao salvar " + e.getMessage());
+            return mv;
+        }
+
     }
 
-    @PatchMapping("/cuidadores/{id}")
-    public void updatePatch(@PathVariable(value = "id") Long cuidadorId, @RequestBody Cuidador cuidadorDetails) {
-        Cuidador cuidador = cuidadorRepository.findById(cuidadorId).get();
-
-        cuidador.setUserName(cuidadorDetails.getUserName());
-        cuidador.setNome(cuidadorDetails.getNome());
-        cuidador.setSobrenome(cuidadorDetails.getSobrenome());
-        cuidador.setSenha(cuidadorDetails.getSenha());
-        cuidador.setGenero(cuidadorDetails.getGenero());
-        cuidador.setCpf(cuidadorDetails.getCpf());
-        cuidador.setDataNascimento(cuidadorDetails.getDataNascimento());
-        cuidador.setEmail(cuidadorDetails.getEmail());
-        cuidador.setFormacao(cuidadorDetails.getFormacao());
-
-        cuidadorRepository.save(cuidador);
-    }
-
-    @PutMapping("/cuidadores/{id}")
-    public void updatePut(@PathVariable(value = "id") Long cuidadorId, @RequestBody Cuidador cuidadorDetails) {
-        cuidadorRepository.save(cuidadorDetails);
-    }
-
-    @GetMapping("/cuidadores/{id}")
-    public Cuidador getById(@PathVariable(value = "id") Long cuidadorId) {
-        return cuidadorRepository.findById(cuidadorId).get();
-    }
-
-    @DeleteMapping("/cuidadores/{id}")
-    public void delete(@PathVariable(value = "id") Long cuidadorId) {
-        cuidadorRepository.deleteById(cuidadorId);
+    @GetMapping("/inicio")
+    public ModelAndView home() {
+        ModelAndView mv = new ModelAndView("home/index");
+        return mv;
     }
 
 }
