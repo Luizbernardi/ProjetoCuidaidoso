@@ -1,6 +1,7 @@
 package br.com.cuidaidoso.cuidaidososb.controler;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
@@ -11,7 +12,7 @@ import br.com.cuidaidoso.cuidaidososb.enumCuidaidoso.Perfil;
 import br.com.cuidaidoso.cuidaidososb.repository.CuidadorRepository;
 import br.com.cuidaidoso.cuidaidososb.util.UploadUtil;
 
-@RestController
+@Controller
 @RequestMapping("/cuidador")
 public class CuidadorControler {
 
