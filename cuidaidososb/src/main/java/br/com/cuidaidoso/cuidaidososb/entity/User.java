@@ -32,7 +32,7 @@ public abstract class User {
     @Column(unique = true)
     @Size(min = 3, max = 20, message = "O nome de usuário deve ter entre 3 e 20 caracteres")
     @Pattern(regexp = "^[a-zA-Z0-9]+$", message = "O nome de usuário deve conter apenas letras e números")
-    private String userName;
+    private String username;
 
     @NotNull
     @Size(min = 3)
@@ -93,7 +93,7 @@ public abstract class User {
             @NotNull @Past(message = "A data de nascimento deve ser uma data no passado") @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}", message = "A data de nascimento deve estar no formato yyyy-MM-dd") LocalDate dataNascimento,
             @NotNull @Email(message = "O email deve ser válido") String email, String imagem, Perfil perfil) {
         this.id = id;
-        this.userName = userName;
+        this.username = userName;
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.senha = senha;
@@ -108,7 +108,7 @@ public abstract class User {
 
     @Override
     public String toString() {
-        return "User [id=" + id + ", userName=" + userName + ", nome=" + nome + ", sobrenome=" + sobrenome + ", senha="
+        return "User [id=" + id + ", userName=" + username + ", nome=" + nome + ", sobrenome=" + sobrenome + ", senha="
                 + senha + ", genero=" + genero + ", cpf=" + cpf + ", telefone=" + telefone + ", dataNascimento="
                 + dataNascimento + ", email=" + email + ", imagem=" + imagem + ", perfil=" + perfil + "]";
     }

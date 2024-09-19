@@ -1,7 +1,5 @@
 package br.com.cuidaidoso.cuidaidososb.controler;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -41,7 +39,7 @@ public class CuidadorControler {
                 cuidador.setImagem(imagem.getOriginalFilename());
             }
             cuidadorRepository.save(cuidador);
-            System.out.println("Cuidador cadastrado com sucesso" + cuidador.getUserName() + " " + cuidador.getImagem());
+            System.out.println("Cuidador cadastrado com sucesso" + cuidador.getUsername() + " " + cuidador.getImagem());
             return home();
 
         } catch (Exception e) {

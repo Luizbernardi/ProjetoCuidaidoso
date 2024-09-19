@@ -12,7 +12,6 @@
         rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -57,7 +56,7 @@
                         <input type="text" class="grow" autocomplete="off" th:field="*{sobrenome}" id="sobrenome"
                             placeholder="Sobrenome" required>
                     </label>
-                    <label for="userName" class="input input-bordered flex items-center gap-2 custom-label">
+                    <label for="username" class="input input-bordered flex items-center gap-2 custom-label">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
                             class="h-4 w-4 ">
                             <path
@@ -74,7 +73,8 @@
                         <select name="genero" id="genero" th:field="*{genero}"
                             class="select select-bordered w-full max-w-xs custom-select" required>
                             <option disabled selected>Gênero</option>
-                            <option th:each="g : ${generoList}" th:value="${g.name()}" th:text="${g.getGenero()}">
+                            <option th:each="genero : ${generoList}" th:value="${genero}"
+                                th:text="${genero.getGenero()}">
                             </option>
                         </select>
                     </label>

@@ -21,16 +21,6 @@ module.exports = {
     },
   },
   plugins: [
-    function ({ addUtilities, theme }) {
-      const textShadow = theme('textShadow');
-      const textShadowUtilities = Object.keys(textShadow).map(key => {
-        return {
-          [`.text-shadow-${key}`]: {
-            textShadow: textShadow[key],
-          },
-        };
-      });
-      addUtilities(textShadowUtilities, ['responsive', 'hover']);
-    },
+
   ],
 };
