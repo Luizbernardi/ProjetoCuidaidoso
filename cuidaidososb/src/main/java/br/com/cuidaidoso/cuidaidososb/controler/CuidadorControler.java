@@ -12,13 +12,13 @@ import br.com.cuidaidoso.cuidaidososb.repository.CuidadorRepository;
 import br.com.cuidaidoso.cuidaidososb.util.UploadUtil;
 
 @RestController
-@RequestMapping("cuidador")
+@RequestMapping("/cuidador")
 public class CuidadorControler {
 
     @Autowired
     private CuidadorRepository cuidadorRepository;
 
-    @GetMapping("cadastro")
+    @GetMapping("/cadastro")
     public ModelAndView cadastro(Cuidador cuidador) {
         ModelAndView mv = new ModelAndView("cuidador/cadastro");
         mv.addObject("usuario", new Cuidador());
@@ -30,24 +30,27 @@ public class CuidadorControler {
 
     @PostMapping("/cadastro-cuidador")
     public ModelAndView cadastro(@ModelAttribute Cuidador cuidador, @RequestParam("file") MultipartFile imagem) {
+        System.out.println("Método POST /cadastro-cuidador chamado");
+        System.out.println("Dados do Cuidador: " + cuidador.toString());
+        System.out.println("Nome do arquivo de imagem: " + imagem.getOriginalFilename());
         ModelAndView mv = new ModelAndView("cuidador/cadastro");
 
         mv.addObject("usuario", cuidador);
 
         try {
-            if (UploadUtil.fazerUploadImagem(imagem)) {
+            if (!imagem.isEmpty() && UploadUtil.fazerUploadImagem(imagem)) {
                 cuidador.setImagem(imagem.getOriginalFilename());
             }
             cuidadorRepository.save(cuidador);
-            System.out.println("Cuidador cadastrado com sucesso" + cuidador.getUsername() + " " + cuidador.getImagem());
+            System.out
+                    .println("Cuidador cadastrado com sucesso: " + cuidador.getUsername() + " " + cuidador.getImagem());
             return home();
 
         } catch (Exception e) {
             mv.addObject("msgErro", e.getMessage());
-            System.out.println("Erro ao salvar " + e.getMessage());
+            System.out.println("Erro ao salvar: " + e.getMessage());
             return mv;
         }
-
     }
 
     @GetMapping("/inicio")

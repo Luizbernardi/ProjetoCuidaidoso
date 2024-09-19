@@ -14,5 +14,5 @@ public interface CuidadorRepository extends JpaRepository<Cuidador, Long> {
 
     Optional<List<Cuidador>> findByEndereco(Endereco endereco);
 
-    Optional<Cuidador> findByUserName(String userName);
+    Optional<Cuidador> findByUsername(String username);
 }

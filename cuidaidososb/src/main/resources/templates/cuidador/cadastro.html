@@ -62,7 +62,7 @@
                             <path
                                 d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                         </svg>
-                        <input type="text" class="grow" autocomplete="off" th:field="*{userName}" id="username"
+                        <input type="text" class="grow" autocomplete="off" th:field="*{username}" id="username"
                             placeholder="Username" required>
                     </label>
                     <label for="senha" class="input input-bordered flex items-center gap-2 custom-label">
@@ -71,7 +71,7 @@
                     </label>
                     <label for="genero" class="flex items-center gap-2 custom-label">
                         <select name="genero" id="genero" th:field="*{genero}"
-                            class="select select-bordered w-full max-w-xs custom-select" required>
+                            class="select select-bordered w-full max-w-xs custom-select">
                             <option disabled selected>Gênero</option>
                             <option th:each="genero : ${generoList}" th:value="${genero}"
                                 th:text="${genero.getGenero()}">
@@ -92,14 +92,14 @@
                     </label>
                     <label for="perfil" class="flex items-center gap-2 custom-label">
                         <select name="perfil" id="perfil" th:field="*{perfil}"
-                            class="select select-bordered w-full max-w-xs custom-select" required>
+                            class="select select-bordered w-full max-w-xs custom-select">
                             <option disabled selected>Perfil</option>
                             <option th:each="p : ${perfilList}" th:value="${p.name()}" th:text="${p.getPerfil()}">
                             </option>
                         </select>
                     </label>
                     <div class="flex justify-center space-x-4 mt-8">
-                        <button class="bg-greenlight px-6 py-2 rounded-md text-black font-bold "
+                        <button class=" bg-greenlight px-6 py-2 rounded-md text-black font-bold "
                             type="submit">Entrar</button>
                     </div>
                 </div>
@@ -107,7 +107,7 @@
                     <label for="formacao"
                         class="mx-2 mr-auto input input-bordered flex items-center gap-2 custom-label">
                         <input placeholder="Formação" type="text" class="grow" autocomplete="off" th:field="*{formacao}"
-                            id="formacao" required>
+                            id="formacao">
                     </label>
                     <label class="input input-bordered flex items-center gap-2 custom-label">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
@@ -121,36 +121,37 @@
                             id="email" required>
                     </label>
                     <label for="imagem" class="mx-2 mr-auto input input-bordered flex items-center gap-2 custom-label">
-                        <input placeholder="Imagem" type="text" class="grow" autocomplete="off" th:field="*{imagem}"
-                            id="imagem" required>
+                        <input placeholder="Imagem" type="file" class="grow" autocomplete="off" th:field="*{imagem}"
+                            id="imagem">
                     </label>
                     <label for="cep" class="input input-bordered flex items-center gap-2 custom-label">
                         <input type="text" th:field="*{endereco.cep}" id="cep" placeholder="Cep" name="cep"
-                            maxlength="8" pattern="\d{8}" oninput="formatCep(this)" required>
+                            maxlength="8" pattern="\d{8}" oninput="formatCep(this)">
                     </label>
                     <label for="estado" class="input input-bordered flex items-center gap-2 custom-label">
                         <input type="text" th:field="*{endereco.estado}" id="estado" placeholder="Estado" name="estado"
-                            maxlength="50" pattern="^[a-zA-Z\s]+$" required>
+                            maxlength="50" pattern="^[a-zA-Z\s]+$">
                     </label>
                     <label for="cidade" class="input input-bordered flex items-center gap-2 custom-label">
                         <input type="text" th:field="*{endereco.cidade}" id="cidade" placeholder="Cidade" name="cidade"
-                            maxlength="50" pattern="^[a-zA-Z\s]+$" required>
+                            maxlength="50" pattern="^[a-zA-Z\s]+$">
                     </label>
                     <label for="bairro" class="input input-bordered flex items-center gap-2 custom-label">
                         <input type="text" th:field="*{endereco.bairro}" id="bairro" placeholder="Bairro" name="bairro"
-                            maxlength="50" pattern="^[a-zA-Z\s]+$" required>
+                            maxlength="50" pattern="^[a-zA-Z\s]+$">
                     </label>
                     <label for="numero" class="input input-bordered flex items-center gap-2 custom-label">
                         <input type="text" th:field="*{endereco.numero}" id="numero" placeholder="Número" name="numero"
-                            maxlength="6" pattern="\d{1,6}" required>
+                            maxlength="6" pattern="\d{1,6}">
                     </label>
                     <label for="complemento" class="input input-bordered flex items-center gap-2 custom-label">
                         <input type="text" th:field="*{endereco.complemento}" id="complemento" placeholder="Complemento"
                             name="complemento" maxlength="50" pattern="^[a-zA-Z\s]+$">
                     </label>
                     <div class="flex justify-center space-x-4 mt-8">
-                        <button class="bg-redlight px-6 py-2 rounded-md text-black font-bold"
-                            type="button">Voltar</button></a>
+                        <a href="/cuidaidososb/src/main/resources/templates/home/index.html">
+                            <button class="bg-redlight px-6 py-2 rounded-md text-black font-bold"
+                                type="button">Voltar</button></a>
                     </div>
                 </div>
             </form>
