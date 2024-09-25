@@ -15,8 +15,8 @@ public class UploadUtil {
             String nomeArquivo = imagem.getOriginalFilename();
             try {
 
-                String pastaUploaImagem = "C:\\Users\\Luizb\\OneDrive\\Documentos\\WorkspaceVsCode\\ProjetoCuidaidoso\\cuidaidososb\\src\\main\\resources\\static\\img\\img-uploads";
-                File dir = new File(pastaUploaImagem);
+                String pastaUploadImagem = "C:\\Users\\Luizb\\OneDrive\\Documentos\\WorkspaceVsCode\\ProjetoCuidaidoso\\cuidaidososb\\src\\main\\resources\\static\\img\\img-uploads";
+                File dir = new File(pastaUploadImagem);
                 if (!dir.exists()) {
                     dir.mkdirs();
                 }

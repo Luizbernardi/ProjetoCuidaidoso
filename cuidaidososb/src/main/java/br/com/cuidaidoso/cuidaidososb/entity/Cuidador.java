@@ -8,7 +8,6 @@ import br.com.cuidaidoso.cuidaidososb.enumCuidaidoso.Verificacao;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Size;
 
@@ -29,9 +28,6 @@ public class Cuidador extends User {
     @Pattern(regexp = "^[a-zA-Z\\s]+$", message = "A formação deve conter apenas letras")
     private String formacao;
 
-    @OneToOne(mappedBy = "cuidador")
-    private Endereco endereco;
-
     @NotNull
     @Enumerated(EnumType.STRING)
     private Verificacao verificacao;
@@ -50,10 +46,9 @@ public class Cuidador extends User {
             @NotNull @Past(message = "A data de nascimento deve ser uma data no passado") @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}", message = "A data de nascimento deve estar no formato yyyy-MM-dd") LocalDate dataNascimento,
             @NotNull @Email(message = "O email deve ser válido") String email, String imagem, Perfil perfil,
             @Size(min = 4) @Pattern(regexp = "^[a-zA-Z\\s]+$", message = "A formação deve conter apenas letras") String formacao,
-            Endereco endereco, @NotNull Verificacao verificacao) {
+            @NotNull Verificacao verificacao) {
         super(id, userName, nome, sobrenome, senha, genero, cpf, telefone, dataNascimento, email, imagem, perfil);
         this.formacao = formacao;
-        this.endereco = endereco;
         this.verificacao = verificacao;
     }
 

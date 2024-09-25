@@ -23,33 +23,34 @@ public class CuidadorControler {
     public ModelAndView cadastro(Cuidador cuidador) {
         ModelAndView mv = new ModelAndView("cuidador/cadastro");
         mv.addObject("usuario", new Cuidador());
-        mv.addObject("generoList", Genero.values());
-        mv.addObject("perfilList", Perfil.values());
+        Genero[] generoList = { Genero.MASCULINO, Genero.FEMININO, Genero.OUTRO };
+        mv.addObject("generoList", generoList);
+        Perfil[] perfilList = { Perfil.ADMIN, Perfil.CUIDADOR };
+        mv.addObject("perfilList", perfilList);
 
         return mv;
     }
 
     @PostMapping("/cadastro-cuidador")
     public ModelAndView cadastro(@ModelAttribute Cuidador cuidador, @RequestParam("file") MultipartFile imagem) {
-        System.out.println("Método POST /cadastro-cuidador chamado");
-        System.out.println("Dados do Cuidador: " + cuidador.toString());
-        System.out.println("Nome do arquivo de imagem: " + imagem.getOriginalFilename());
         ModelAndView mv = new ModelAndView("cuidador/cadastro");
-
         mv.addObject("usuario", cuidador);
 
         try {
-            if (!imagem.isEmpty() && UploadUtil.fazerUploadImagem(imagem)) {
-                cuidador.setImagem(imagem.getOriginalFilename());
+            if (!imagem.isEmpty()) {
+                if (UploadUtil.fazerUploadImagem(imagem)) {
+                    cuidador.setImagem(imagem.getOriginalFilename());
+                } else {
+                    throw new Exception("Falha ao fazer upload da imagem");
+                }
             }
-            cuidadorRepository.save(cuidador);
-            System.out
-                    .println("Cuidador cadastrado com sucesso: " + cuidador.getUsername() + " " + cuidador.getImagem());
-            return home();
 
+            cuidadorRepository.save(cuidador);
+            System.out.println("Cuidador salvo com sucesso: " + cuidador.getNome() + " " + cuidador.getImagem());
+            return home();
         } catch (Exception e) {
             mv.addObject("msgErro", e.getMessage());
-            System.out.println("Erro ao salvar: " + e.getMessage());
+            System.out.println("Erro ao salvar o cuidador: " + e.getMessage());
             return mv;
         }
     }
