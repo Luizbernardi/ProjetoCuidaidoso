@@ -31,8 +31,8 @@
 
 <body>
   <main class="h-screen flex">
-    <div class="lg:w-[20%] p-10 flex justify-between h-full items-center lg:flex-col bg-white">
-      <img class="align-middle w-56" src="/ProjetoCuidaidoso/cuidaidososb/src/main/resources/static/img/logo2.png"
+    <nav class="lg:w-[20%] p-10 flex justify-between h-full items-center lg:flex-col bg-white">
+      <img class="align-middle w-56" src="../../static/img/logo2.png"
         alt="Logo2 Cuidaidoso">
       <div class="space-y-5 align-middle a flex flex-col flex-wrap mt-32 h-full">
         <div class="flex items-center">
@@ -89,8 +89,8 @@
         </div>
 
       </div>
-    </div>
-    <div class="lg:w-[80%] flex relative items-center justify-center bg-[#e7e7e7]">
+    </nav>
+    <div class="lg:w-[80%] flex relative items-center justify-center bg-[#e7e7e7] space-x-20">
       <nav class="absolute top-10 left-5 flex items-center justify-between w-[90%]">
         <div class="flex items-center">
           <a class="justify-center flex w-full items-center" href="detalhamentoCuidador.html">
@@ -114,17 +114,17 @@
             <path fill="#454545"
               d="M10 .188A9.81 9.81 0 0 0 .187 10A9.81 9.81 0 0 0 10 19.813c2.29 0 4.393-.811 6.063-2.125l.875.875a1.845 1.845 0 0 0 .343 2.156l4.594 4.625c.713.714 1.88.714 2.594 0l.875-.875a1.84 1.84 0 0 0 0-2.594l-4.625-4.594a1.82 1.82 0 0 0-2.157-.312l-.875-.875A9.812 9.812 0 0 0 10 .188M10 2a8 8 0 1 1 0 16a8 8 0 0 1 0-16M4.937 7.469a5.45 5.45 0 0 0-.812 2.875a5.46 5.46 0 0 0 5.469 5.469a5.5 5.5 0 0 0 3.156-1a7 7 0 0 1-.75.03a7.045 7.045 0 0 1-7.063-7.062c0-.104-.005-.208 0-.312" />
           </svg>
-          <p class="ml-2" style="white-space: nowrap;">
+          <p class="ml-2 text-black" style="white-space: nowrap;">
             Detalhamento de Cuidador
           </p>
         </div>
         <div class="flex items-center space-x-2">
           <div class="avatar">
-            <div class="w-20 rounded-full">
+            <div class="w-[100px] h-[100px] rounded-full">
               <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
             </div>
           </div>
-          <a class="justify-center flex w-full items-center" href="detalhamentoCuidador.html">Maria Joana
+          <a class="justify-center flex w-full items-center text-black" href="detalhamentoCuidador.html">Maria Joana
             <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24">
               <path fill="currentColor" fill-rule="evenodd"
                 d="M15.418 5.643a1.25 1.25 0 0 0-1.34-.555l-1.798.413a1.25 1.25 0 0 1-.56 0l-1.798-.413a1.25 1.25 0 0 0-1.34.555l-.98 1.564c-.1.16-.235.295-.395.396l-1.564.98a1.25 1.25 0 0 0-.555 1.338l.413 1.8a1.25 1.25 0 0 1 0 .559l-.413 1.799a1.25 1.25 0 0 0 .555 1.339l1.564.98c.16.1.295.235.396.395l.98 1.564c.282.451.82.674 1.339.555l1.798-.413a1.25 1.25 0 0 1 .56 0l1.799.413a1.25 1.25 0 0 0 1.339-.555l.98-1.564c.1-.16.235-.295.395-.395l1.565-.98a1.25 1.25 0 0 0 .554-1.34L18.5 12.28a1.25 1.25 0 0 1 0-.56l.413-1.799a1.25 1.25 0 0 0-.554-1.339l-1.565-.98a1.25 1.25 0 0 1-.395-.395zm-.503 4.127a.5.5 0 0 0-.86-.509l-2.615 4.426l-1.579-1.512a.5.5 0 1 0-.691.722l2.034 1.949a.5.5 0 0 0 .776-.107z"
@@ -132,14 +132,14 @@
             </svg>
           </a>
       </nav>
-      <div class="flex w-80 h-80  bg-white">
+      <!-- <div class="flex w-[500px] h-[500px] rounded-md  bg-white ">
         <div class="flex flex-col w-1/2 h-full">
           <div class="flex flex-col items-center justify-center h-1/2">
-            <img class="w-20 h-20 rounded-full"
+            <img class="w-[100px] h-[100px] rounded-full"
               src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="Foto do Cuidador">
           </div>
         </div>
-        <div class="flex flex-col w-1/2 h-full">
+        <div class="flex flex-col w-1/2 mr-10 h-full">
           <div class="flex flex-col items-center justify-center h-1/2">
             <p class="text-gray-500">Endereço: Rua dos Bobos, nº 0</p>
             <p class="text-gray-500">Bairro: Vila do Chaves</p>
@@ -151,8 +151,87 @@
             <p class="text-gray-500">RG: 00.000.000-0</p>
           </div>
         </div>
-      </div>
+      </div>-->
 
+      <div class="flex flex-row card bg-base-100 w-[422px] shadow-xl mr-auto ml-40 bg-white ">
+        <div>
+        <figure class="px-10 pt-10">
+          <img class="w-[100px] h-[100px] rounded-full"
+              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt="Foto do Cuidador">
+        </figure>
+        <div class="card-body items-start text-left text-black">
+          <h2 class="card-title">Nome:</h2>
+          <p>Maria Joana</p>
+          <h2 class="card-title">Formação:</h2>
+          <p>Técnica de Enfermagem</p>
+          <h2 class="card-title">Telefone:</h2>
+          <p>(48) 91234-1234</p>
+          <h2 class="card-title">Idade:</h2>
+          <p>28</p>
+          <h2 class="card-title">Gênero:</h2>
+          <p>Feminino</p>
+        </div>
+      </div>
+      </div>
+      
+      
+      
+      <div class="flex flex-row card bg-base-100 w-[600px] shadow-xl ml-auto mr-40 bg-white ">
+        <div>
+        <figure class="px-10 pt-10">
+          
+          <div class="bg-gray-100 p-4 rounded-md shadow-md">
+            <h2 class="text-2xl font-bold mb-2 text-black">Descrição</h2>
+            <p class="text-black text-base">
+                Descrição: Cliente ativo desde 2024, sempre disposta a ajudar e prestar os melhores cuidados. Com 4 atuando como Técnica em Enfermagem na cidade de Florianópolis/SC.
+            </p>
+        </div>
+          
+          
+        </figure>
+        <h2 class="font-bold text-2x1 text-black text-center pt-6">Competências</h2>
+        <div class="overflow-x-auto">
+          <table class="table table-auto border-spacing-x-12 border-separate pb-8 text-base">
+            <!-- head -->
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody class="text-black">
+              <!-- row 1 -->
+              <tr>
+                <th>1</th>
+                <td>Cy Ganderton</td>
+              </tr>
+              <!-- row 2 -->
+              <tr>
+                <th>2</th>
+                <td>Hart Hagerty</td>
+              </tr>
+              <!-- row 3 -->
+              <tr>
+                <th>3</th>
+                <td>Brice Swyre</td>
+                <!-- row 4 -->
+              <tr>
+                <th>4</th>
+                <td>Brice Swyre</td>
+                <!-- row 5 -->
+              <tr>
+                <th>5</th>
+                <td>Brice Swyre</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+          
+        </div>
+      </div>
+       
+      </div>
+      
     </div>
   </main>
 </body>
