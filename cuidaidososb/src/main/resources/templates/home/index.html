@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/cuidaidososb/src/main/resources/static/css/style.css">
+  <link rel="stylesheet" href="/cuidaidososb/src/main/resources/static/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -30,7 +30,7 @@
 
 <body>
   <header>
-    <nav class="fixed flex items-center justify-between h-20 w-full p-5 bg-[#3b3b3b] bg-opacity-20 shadow-sm">
+    <nav class="fixed z-50 flex items-center justify-between h-20 w-full p-5 bg-[#3b3b3b] bg-opacity-20 shadow-sm">
       <div>
         <a href="/"><img class="w-48 mx-24" src="/cuidaidososb/src/main/resources/static/img/logo.png" /></a>
       </div>
@@ -54,10 +54,12 @@
     </nav>
   </header>
   <main>
-    <div>
-      <div class="bg-[url('/cuidaidososb/src/main/resources/static/img/bgpark.png')] bg-cover bg-no-repeat bg-center w-full h-screen">
-        <div class="absolute bg-[#7FCDCD] drop-shadow rounded-full w-[499px] h-[499px] bottom-0 left-40"></div>
-          <img class="absolute bottom-0 left-36" src="/cuidaidososb/src/main/resources/static/img/senior_gesturing.png" alt="Senior Gesturing" />
+    <section>
+      <div>
+        <div class="bg-[url('/cuidaidososb/src/main/resources/static/img/bgpark.png')] bg-cover bg-no-repeat bg-center w-full h-screen">
+          <div class="absolute bg-[#7FCDCD] drop-shadow rounded-full w-[499px] h-[499px] bottom-0 left-40"></div>
+          <img class="absolute bottom-0 left-36" src="/cuidaidososb/src/main/resources/static/img/senior_gesturing.png"
+            alt="Senior Gesturing" />
           <div class="absolute bottom-96 right-96">
             <p class="text-6xl font-roboto font-bold text-shadow-custom">
               Os melhores
@@ -68,29 +70,81 @@
             <p class="text-6xl font-bold font-roboto text-[#7FCDCD]">
               cadastrados
             </p>
-            <p class="text-6xl font-bold font-roboto ">
-              em nossa plataforma
-            </p>
+            <p class="text-6xl font-bold font-roboto">em nossa plataforma</p>
           </div>
           <div class="absolute bottom-[350px] right-[950px]">
             <a href="login.html">
-              <button class="absolute w-[568px] h-[66px] bg-[#7FCDCD] rounded-[12px] text-white text-[32px] font-bold shadow-lg font-roboto">
+              <button
+                class="absolute w-[568px] h-[66px] bg-[#7FCDCD] rounded-[12px] text-white text-[32px] font-bold shadow-lg font-roboto">
                 Clique aqui para entrar na plataforma
               </button>
             </a>
           </div>
-          <!-- <p class="font-roboto text-4xl font-bold text-gray-700"></p>
-            Os melhores Profissionais cadastrados em nossa plataforma
-          </p> -->
         </div>
       </div>
-    </div>
+    </section>
+    <section class="relative w-full h-screen flex items-center justify-center">
+      <div class="relative w-[1289px] h-[465px] drop-shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+        <div class="w-full h-full bg-[#D37687] rounded-[40px] relative flex flex-col items-center justify-center">
+          <h1 class="text-white font-roboto font-bold text-[68px] leading-[80px] text-shadow-lg">
+            Benefícios
+          </h1>
+          <div class="flex justify-around w-full mt-10">
+            <div class="flex flex-col items-center">
+              <div class="w-[255px] h-[255px] bg-[#FAFAFA] rounded-[20px] shadow-md flex items-center justify-center">
+                <div class="w-[127px] h-[127px] bg-[#7FCDCD] rounded-full flex items-center justify-center">
+                  <div class="w-[88px] h-[88px] bg-white"></div>
+                </div>
+              </div>
+              <p class="font-roboto font-bold text-[28px] leading-[33px] text-center text-black mt-5">
+                Encontre seu cuidador com facilidade
+              </p>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="w-[255px] h-[255px] bg-[#FAFAFA] rounded-[20px] shadow-md flex items-center justify-center">
+                <div class="w-[127px] h-[127px] bg-[#7FCDCD] rounded-full flex items-center justify-center">
+                  <div class="w-[88px] h-[88px] bg-white"></div>
+                </div>
+              </div>
+              <p class="font-roboto font-bold text-[28px] leading-[33px] text-center text-black mt-5">
+                Encontre seu cuidador com facilidade
+              </p>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="w-[255px] h-[255px] bg-[#FAFAFA] rounded-[20px] shadow-md flex items-center justify-center">
+                <div class="w-[127px] h-[127px] bg-[#7FCDCD] rounded-full flex items-center justify-center">
+                  <div class="w-[88px] h-[88px] bg-white"></div>
+                </div>
+              </div>
+              <p class="font-roboto font-bold text-[28px] leading-[33px] text-center text-black mt-5">
+                Encontre seu cuidador com facilidade
+              </p>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="w-[255px] h-[255px] bg-[#FAFAFA] rounded-[20px] shadow-md flex items-center justify-center">
+                <div class="w-[127px] h-[127px] bg-[#7FCDCD] rounded-full flex items-center justify-center">
+                  <div class="w-[88px] h-[88px] bg-white"></div>
+                </div>
+              </div>
+              <p class="font-roboto font-bold text-[28px] leading-[33px] text-center text-black mt-5">
+                Encontre seu cuidador com facilidade
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div>
+        <img class="w-full" src="../../static/img/"/>
+      </div>
+    </section>
   </main>
-  <section class="h-screen w-full flex"></section>
   <footer>
     <div class="flex flex-col items-center justify-center h-32 text-[#6B6B6B]">
       <p>Cuidaidoso© todos os direitos reservados.</p>
     </div>
+  </footer>
 </body>
 
 </html>
